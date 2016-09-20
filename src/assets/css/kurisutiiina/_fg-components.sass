@@ -1,0 +1,180 @@
+// consolidate this
+
+=fg-round-metalic($map: ())
+	$defaults: (width: 40px)
+	$map: map-merge($defaults, $map)
+
+	position: relative
+	width: map-get($map, width)
+	height: map-get($map, width)
+	line-height: map-get($map, width)
+	border-radius: 50%
+	background-color: #f7f7f7
+	background-image: -webkit-radial-gradient(50% 0%, 8% 50%, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(50% 100%, 12% 50%, hsla(0, 0%, 100%, 0.6) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(0% 50%, 50% 7%, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(100% 50%, 50% 5%, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 3%, hsla(0, 0%, 0%, 0.1) 3.5%), -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, 0.1) 7.5%), -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, 0.2) 2.2%), -webkit-radial-gradient(50% 50%, 200% 50%, hsla(0, 0%, 90%, 1) 5%, hsla(0, 0%, 85%, 1) 30%, hsla(0, 0%, 60%, 1) 100%)
+
+	&:before, &:after
+		content: ""
+		top: 0
+		left: 0
+		position: absolute
+		width: inherit
+		height: inherit
+		border-radius: inherit
+		background-image: -webkit-radial-gradient(50% 0%, 20% 50%, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0) 100%), -webkit-radial-gradient(50% 100%, 20% 50%, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0) 100%), -webkit-radial-gradient(0% 50%, 50% 20%, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0) 100%), -webkit-radial-gradient(100% 50%, 50% 20%, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0) 100%)
+
+	&:before
+		transform: rotate(60deg)
+
+		// opacity: 0.5
+
+	&:after
+		background-image: -webkit-radial-gradient(50% 0%, 20% 50%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(50% 100%, 20% 50%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(0% 50%, 50% 20%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), -webkit-radial-gradient(100% 50%, 50% 20%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%)
+		transform: rotate(105deg)
+
+// input (this is abstract)
+=fg-input($map: ())
+	$defaults: (glow-color: $md-light-blue)
+	$map: map-merge($defaults, $map)
+
+	background-color: white
+	color: $text
+	border-radius: 2px
+	border-width: 1px
+	border-color: $divider
+	border-style: solid
+	transition: 200ms $ease-natural box-shadow, 200ms $ease-natural border-color
+	padding: 5px 8px
+	resize: none
+
+	&:focus
+		outline: none
+		border-color: map-get($map, glow-color)
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(map-get($map, glow-color), 0.4), 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+
+=fg-switch($map: ())
+	$defaults: (background-color: $md-light-blue)
+	$map: map-merge($defaults, $map)
+
+	display: inline-block
+	width: 50px
+	height: 30px
+	border-radius: 15px
+	position: relative
+	background-color: map-get($map, background-color)
+
+	&:before
+		content: ""
+		display: block
+		width: 22px
+		height: 22px
+		border-radius: 50%
+		background-color: white
+		position: absolute
+		top: 4px
+		left: 4px
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4)
+
+	&:hover
+		cursor: pointer
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($md-blue, 0.4)
+
+=fg-switch-metalic($map: ())
+	$defaults: (background-color: $md-light-blue)
+	$map: map-merge($defaults, $map)
+
+	display: inline-block
+	width: 52px
+	height: 30px
+	border-radius: 15px
+	position: relative
+	background-color: tint(map-get($map, background-color), 40%)
+	transition: 200ms $ease-natural
+
+	+prefix((user-select: none))
+
+	.metal-knob
+		+fg-round-metalic((width: 24px))
+
+		top: 3px
+		left: 3px
+		transition: all 100ms $ease-natural, left 100ms $ease-enter
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6)
+
+	&:hover
+		cursor: pointer
+
+		.metal-knob
+			box-shadow: 0 0 8px 1px map-get($map, background-color)
+
+	&.active
+		background-color: map-get($map, background-color)
+
+		.metal-knob
+			left: 25px
+
+=fg-btn($map: ())
+	$defaults: (background-color: white, color: $text, border-radius: 2px)
+	$map: map-merge($defaults, $map)
+
+	background-color: map-get($map, background-color)
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+	display: inline-flex
+	position: relative
+	justify-content: center
+	align-items: center
+	border-radius: map-get($map, border-radius)
+	padding: 5px 10px
+	transition: all 200ms $ease-natural
+	color: map-get($map, color)
+
+	@if map-get($map, border-radius) == 100%
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.36)
+
+	&:hover
+		background-color: shade(map-get($map, background-color), 10%)
+		cursor: pointer
+
+	&:active
+		background-color: shade(map-get($map, background-color), 5%)
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(0, 0, 0, 0.36)
+
+	&[disabled]
+		pointer-events: none
+		background-color: tint(map-get($map, background-color), 25%)
+		opacity: 0.8
+
+// modal
+.fg-backdrop
+	@extend .flex-xy
+
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 110
+	background-color: rgba(0, 0, 0, 0.4)
+
+	&.ng-hide-remove
+		animation: 300ms fadeIn $ease-natural
+
+	&.ng-hide-add
+		animation: 300ms fadeOut $ease-natural
+
+.fg-modal
+	@extend .card-2
+
+	min-height: 62vh
+	max-height: 100vh
+	width: 100%
+	z-index: 111
+
+	+media-sm-up
+		width: 62vw
+
+
+	&.ng-hide-remove
+		animation: 300ms zoomIn $ease-enter
+
+	&.ng-hide-add
+		animation: 300ms zoomOut $ease-leave

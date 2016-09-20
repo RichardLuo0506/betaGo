@@ -1,0 +1,71 @@
+// To replace lighten() and darken()
+@function tint($color, $percentage)
+	@return mix(white, $color, $percentage)
+
+@function shade($color, $percentage)
+	@return mix(black, $color, $percentage)
+
+// // palette generator
+// @function color-diff($a, $b)
+// 	$sat: saturation($a) - saturation($b)
+// 	$lig: lightness($a) - lightness($b)
+// 	$fn-sat: if($sat > 0, "desaturate", "saturate")
+// 	$fn-lig: if($lig > 0, "darken", "lighten")
+
+// 	@return (adjust-hue: -(hue($a) - hue($b)), #{$fn-sat}: abs($sat), #{$fn-lig}: abs($lig))
+
+// @function palette-diff($palette)
+// 	$base: map-get($palette, base)
+// 	$colors: map-get($palette, colors)
+
+// 	$diffs: ()
+
+// 	@each $color in $colors
+// 		$diffs: append($diffs, color-diff($base, $color))
+
+// 	@return $diffs
+
+// $base-palette: (base: #FF6351, colors: #CFDFE8 #BFB9C3 #CF9192 #FF6351 #BF4A3C #7F3128 #732C24) !default
+
+// $palette-diffs: palette-diff($base-palette)
+
+// @function apply-diff($color, $diff)
+// 	@each $key, $value in $diff
+// 		$color: call($key, $color, $value)
+
+// 	@return $color
+
+// @function create-palette($base-color)
+// 	$colors: ()
+
+// 	@each $diff in $palette-diffs
+// 		$colors: append($colors, apply-diff($base-color, $diff))
+
+// 	@return $colors
+
+// @function palette($base-color)
+// 	$colors: create-palette($base-color)
+// 	$keys: "lightest" "lighter" "light" "base" "dark" "darker" "darkest"
+// 	$palette: ()
+
+// 	@for $i from 1 through min(length($colors), length($keys))
+// 		$palette: map-merge($palette, (nth($keys, $i): nth($colors, $i)))
+
+// 	@return $palette
+
+// =draw-palette($base-color)
+// 	$palette: create-palette($base-color)
+// 	$length: length($palette)
+// 	$color-stops: append((), nth($palette, 1), comma)
+// 	$stop-size: 100 / $length
+
+// 	@for $i from 1 through $length
+// 		$color: nth($palette, $i)
+
+// 		@if $i > 1
+// 			$color-stops: append($color-stops, $color ($stop-size * ($i - 1) * 1%))
+
+// 		$color-stops: append($color-stops, $color ($stop-size * $i * 1%))
+
+// 	background: nth($palette, ceil($length / 2))
+// 	background: linear-gradient(to right, $color-stops)

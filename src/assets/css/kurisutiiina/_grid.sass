@@ -1,0 +1,100 @@
+.fg-row
+	display: flex
+	width: 100%
+
+	&.wrap
+		flex-wrap: wrap
+
+.fg-row-padded
+	@extend .fg-row
+
+	padding: 0 ($grid-padding / 2)
+
+	&.wrap
+		flex-wrap: wrap
+
+	> [class*='fg-col']
+		padding: 0 ($grid-padding / 2)
+
+.fg-col, .fg-col-100
+	flex: 0 0 100%
+	display: block
+	width: 100%
+
+.fg-col-10
+	@extend .fg-col
+
+	flex: 0 0 10%
+	max-width: 10%
+
+.fg-col-20
+	@extend .fg-col
+
+	flex: 0 0 20%
+	max-width: 20%
+
+.fg-col-25
+	@extend .fg-col
+
+	flex: 0 0 25%
+	max-width: 25%
+
+.fg-col-33
+	@extend .fg-col
+
+	flex: 0 0 33.3333%
+	max-width: 33.3333%
+
+.fg-col-38
+	@extend .fg-col
+
+	flex: 0 0 38%
+	max-width: 38%
+
+.fg-col-40
+	@extend .fg-col
+
+	flex: 0 0 40%
+	max-width: 40%
+
+.fg-col-50
+	@extend .fg-col
+
+	flex: 0 0 50%
+	max-width: 50%
+
+.fg-col-60
+	@extend .fg-col
+
+	flex: 0 0 60%
+	max-width: 60%
+
+.fg-col-62
+	@extend .fg-col
+
+	flex: 0 0 62%
+	max-width: 62%
+
+.fg-col-66
+	@extend .fg-col
+
+	flex: 0 0 66.6666%
+	max-width: 66.6666%
+
+.fg-col-75
+	@extend .fg-col
+
+	flex: 0 0 75%
+	max-width: 75%
+
+.fg-col-80
+	@extend .fg-col
+
+	flex: 0 0 80%
+	max-width: 80%
+
+.fg-col-90
+	@extend .fg-col
+
+	flex: 0 0 90%
+	max-width: 90%

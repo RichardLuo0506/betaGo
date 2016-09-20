@@ -1,0 +1,44 @@
+.goban
+	z-index: 50
+	width: 760px
+	height: 760px
+	background: url(/src/assets/img/goban.svg) center center no-repeat
+	background-size: cover
+
+.goban-grid
+	z-index: 60
+	padding: 4px
+	display: flex
+
+.goban-column
+	display: flex
+	flex-direction: column
+	height: 752px
+	flex: 0 0 calc(100%/19)
+
+.moku
+	position: relative
+	flex: 0 0 calc(100%/19)
+
+	&:hover
+		cursor: pointer
+
+.stone
+	z-index: 70
+	border-radius: 100%
+	position: absolute
+	top: 1px
+	right: 1px
+	bottom: 1px
+	left: 1px
+	box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5), 4px 4px 10px 0px rgba(0, 0, 0, 0.5)
+
+	&.black
+		background-color: black
+		background: url(/src/assets/img/black-stone.png) center center no-repeat
+		background-size: cover
+
+	&.white
+		background-color: white
+		background: url(/src/assets/img/white-stone.png) center center no-repeat
+		background-size: cover

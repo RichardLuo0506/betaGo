@@ -1,0 +1,340 @@
+$phi: 1.618
+
+// typography
+$headings-font-weight: 500 !default
+$headings-line-height: 1.2 !default
+$font-size-base: 14px !default
+$font-size-large: 18px !default
+$font-size-small: 11px !default
+$line-height-base: 1.42857 !default
+$line-height-computed: floor($font-size-base * $line-height-base) !default
+
+// transition/animation
+$ease-natural: cubic-bezier(0.4, 0, 0.2, 1)
+$ease-enter: cubic-bezier(0, 0, 0.2, 1)
+$ease-leave: cubic-bezier(0.4, 0, 1, 1)
+
+// Colors
+// google suggested, they're great to but needs tweaking
+// $text: rgba(0, 0, 0, 0.87)
+// $subtext: rgba(0, 0, 0, 0.54)
+// $subtext-invert: rgba(255, 255, 255, 0.7)
+// $divider: rgba(0, 0, 0, 0.12)
+// $icon: rgba(0, 0, 0, 0.54)
+
+// personal
+$bg: #f7f7f7
+$text: rgba(0, 0, 0, 0.8)
+$subtext: rgba(0, 0, 0, 0.5)
+$subtext-invert: rgba(255, 255, 255, 0.7)
+$divider: rgba(0, 0, 0, 0.12)
+$divider-invert: rgba(255, 255, 255, 0.12)
+$icon: rgba(0, 0, 0, 0.54)
+
+// Opacity hints
+// https://www.google.com/design/spec/style/color.html#color-color-schemes
+// Primary text: 0.87
+// Secondary text: 0.54
+// Disabled text: 0.38
+// Primary text inverted: 1
+// Secondary text inverted: 0.70
+// Disabled text inverted: 0.50
+// Dividers: 0.12
+// Icon: 0.54
+// Disabled Icon: 0.38
+// Icon inverted: 1
+// Disabled Icon inverted: 0.50
+
+// bootstrap colors
+$bs-orange: #F0AD4E !default
+$bs-blue: #337AB7 !default
+$bs-green: #5CB85C !default
+$bs-teal: #5BC0DE !default
+$bs-red: #D9534F !default
+
+// material design 500 series
+$md-red-50: #FFEBEE !default
+$md-red-100: #FFCDD2 !default
+$md-red-200: #EF9A9A !default
+$md-red-300: #E57373 !default
+$md-red-400: #EF5350 !default
+$md-red: #F44336 !default
+$md-red-600: #E53935 !default
+$md-red-700: #D32F2F !default
+$md-red-800: #C62828 !default
+$md-red-900: #B71C1C !default
+$md-red-A100: #FF8A80 !default
+$md-red-A200: #FF5252 !default
+$md-red-A400: #FF1744 !default
+$md-red-A700: #D50000 !default
+
+$md-pink-50: #FCE4EC !default
+$md-pink-100: #F8BBD0 !default
+$md-pink-200: #F48FB1 !default
+$md-pink-300: #F06292 !default
+$md-pink-400: #EC407A !default
+$md-pink: #E91E63 !default
+$md-pink-600: #D81B60 !default
+$md-pink-700: #C2185B !default
+$md-pink-800: #AD1457 !default
+$md-pink-900: #880E4F !default
+$md-pink-A100: #FF80AB !default
+$md-pink-A200: #FF4081 !default
+$md-pink-A400: #F50057 !default
+$md-pink-A700: #C51162 !default
+
+$md-purple-50: #F3E5F5 !default
+$md-purple-100: #E1BEE7 !default
+$md-purple-200: #CE93D8 !default
+$md-purple-300: #BA68C8 !default
+$md-purple-400: #AB47BC !default
+$md-purple: #9C27B0 !default
+$md-purple-600: #8E24AA !default
+$md-purple-700: #7B1FA2 !default
+$md-purple-800: #6A1B9A !default
+$md-purple-900: #4A148C !default
+$md-purple-A100: #EA80FC !default
+$md-purple-A200: #E040FB !default
+$md-purple-A400: #D500F9 !default
+$md-purple-A700: #AA00FF !default
+
+$md-deep-purple-50: #EDE7F6 !default
+$md-deep-purple-100: #D1C4E9 !default
+$md-deep-purple-200: #B39DDB !default
+$md-deep-purple-300: #9575CD !default
+$md-deep-purple-400: #7E57C2 !default
+$md-deep-purple: #673AB7 !default
+$md-deep-purple-600: #5E35B1 !default
+$md-deep-purple-700: #512DA8 !default
+$md-deep-purple-800: #4527A0 !default
+$md-deep-purple-900: #311B92 !default
+$md-deep-purple-A100: #B388FF !default
+$md-deep-purple-A200: #7C4DFF !default
+$md-deep-purple-A400: #651FFF !default
+$md-deep-purple-A700: #6200EA !default
+
+$md-indigo-50: #E8EAF6 !default
+$md-indigo-100: #C5CAE9 !default
+$md-indigo-200: #9FA8DA !default
+$md-indigo-300: #7986CB !default
+$md-indigo-400: #5C6BC0 !default
+$md-indigo: #3F51B5 !default
+$md-indigo-600: #3949AB !default
+$md-indigo-700: #303F9F !default
+$md-indigo-800: #283593 !default
+$md-indigo-900: #1A237E !default
+$md-indigo-A100: #8C9EFF !default
+$md-indigo-A200: #536DFE !default
+$md-indigo-A400: #3D5AFE !default
+$md-indigo-A700: #304FFE !default
+
+$md-blue-50: #E3F2FD !default
+$md-blue-100: #BBDEFB !default
+$md-blue-200: #90CAF9 !default
+$md-blue-300: #64B5F6 !default
+$md-blue-400: #42A5F5 !default
+$md-blue: #2196F3 !default
+$md-blue-600: #1E88E5 !default
+$md-blue-700: #1976D2 !default
+$md-blue-800: #1565C0 !default
+$md-blue-900: #0D47A1 !default
+$md-blue-A100: #82B1FF !default
+$md-blue-A200: #448AFF !default
+$md-blue-A400: #2979FF !default
+$md-blue-A700: #2962FF !default
+$md-blue-200: #90CAF9 !default
+$md-blue-700: #1976D2 !default
+$md-blue-A400: #2979FF !default
+
+$md-light-blue-50: #E1F5FE !default
+$md-light-blue-100: #B3E5FC !default
+$md-light-blue-200: #81D4FA !default
+$md-light-blue-300: #4FC3F7 !default
+$md-light-blue-400: #29B6F6 !default
+$md-light-blue: #03A9F4 !default
+$md-light-blue-600: #039BE5 !default
+$md-light-blue-700: #0288D1 !default
+$md-light-blue-800: #0277BD !default
+$md-light-blue-900: #01579B !default
+$md-light-blue-A100: #80D8FF !default
+$md-light-blue-A200: #40C4FF !default
+$md-light-blue-A400: #00B0FF !default
+$md-light-blue-A700: #0091EA !default
+
+$md-cyan-50: #E0F7FA !default
+$md-cyan-100: #B2EBF2 !default
+$md-cyan-200: #80DEEA !default
+$md-cyan-300: #4DD0E1 !default
+$md-cyan-400: #26C6DA !default
+$md-cyan: #00BCD4 !default
+$md-cyan-600: #00ACC1 !default
+$md-cyan-700: #0097A7 !default
+$md-cyan-800: #00838F !default
+$md-cyan-900: #006064 !default
+$md-cyan-A100: #84FFFF !default
+$md-cyan-A200: #18FFFF !default
+$md-cyan-A400: #00E5FF !default
+$md-cyan-A700: #00B8D4 !default
+$md-cyan-A400: #00E5FF !default
+
+$md-teal-50: #E0F2F1 !default
+$md-teal-100: #B2DFDB !default
+$md-teal-200: #80CBC4 !default
+$md-teal-300: #4DB6AC !default
+$md-teal-400: #26A69A !default
+$md-teal: #009688 !default
+$md-teal-600: #00897B !default
+$md-teal-700: #00796B !default
+$md-teal-800: #00695C !default
+$md-teal-900: #004D40 !default
+$md-teal-A100: #A7FFEB !default
+$md-teal-A200: #64FFDA !default
+$md-teal-A400: #1DE9B6 !default
+$md-teal-A700: #00BFA5 !default
+
+$md-green-50: #E8F5E9 !default
+$md-green-100: #C8E6C9 !default
+$md-green-200: #A5D6A7 !default
+$md-green-300: #81C784 !default
+$md-green-400: #66BB6A !default
+$md-green: #4CAF50 !default
+$md-green-600: #43A047 !default
+$md-green-700: #388E3C !default
+$md-green-800: #2E7D32 !default
+$md-green-900: #1B5E20 !default
+$md-green-A100: #B9F6CA !default
+$md-green-A200: #69F0AE !default
+$md-green-A400: #00E676 !default
+$md-green-A700: #00C853 !default
+
+$md-light-green-50: #F1F8E9 !default
+$md-light-green-100: #DCEDC8 !default
+$md-light-green-200: #C5E1A5 !default
+$md-light-green-300: #AED581 !default
+$md-light-green-400: #9CCC65 !default
+$md-light-green: #8BC34A !default
+$md-light-green-600: #7CB342 !default
+$md-light-green-700: #689F38 !default
+$md-light-green-800: #558B2F !default
+$md-light-green-900: #33691E !default
+$md-light-green-A100: #CCFF90 !default
+$md-light-green-A200: #B2FF59 !default
+$md-light-green-A400: #76FF03 !default
+$md-light-green-A700: #64DD17 !default
+
+$md-lime-50: #F9FBE7 !default
+$md-lime-100: #F0F4C3 !default
+$md-lime-200: #E6EE9C !default
+$md-lime-300: #DCE775 !default
+$md-lime-400: #D4E157 !default
+$md-lime: #CDDC39 !default
+$md-lime-600: #C0CA33 !default
+$md-lime-700: #AFB42B !default
+$md-lime-800: #9E9D24 !default
+$md-lime-900: #827717 !default
+$md-lime-A100: #F4FF81 !default
+$md-lime-A200: #EEFF41 !default
+$md-lime-A400: #C6FF00 !default
+$md-lime-A700: #AEEA00 !default
+
+$md-yellow-50: #FFFDE7 !default
+$md-yellow-100: #FFF9C4 !default
+$md-yellow-200: #FFF59D !default
+$md-yellow-300: #FFF176 !default
+$md-yellow-400: #FFEE58 !default
+$md-yellow: #FFEB3B !default
+$md-yellow-600: #FDD835 !default
+$md-yellow-700: #FBC02D !default
+$md-yellow-800: #F9A825 !default
+$md-yellow-900: #F57F17 !default
+$md-yellow-A100: #FFFF8D !default
+$md-yellow-A200: #FFFF00 !default
+$md-yellow-A400: #FFEA00 !default
+$md-yellow-A700: #FFD600 !default
+
+$md-amber-50: #FFF8E1 !default
+$md-amber-100: #FFECB3 !default
+$md-amber-200: #FFE082 !default
+$md-amber-300: #FFD54F !default
+$md-amber-400: #FFCA28 !default
+$md-amber: #FFC107 !default
+$md-amber-600: #FFB300 !default
+$md-amber-700: #FFA000 !default
+$md-amber-800: #FF8F00 !default
+$md-amber-900: #FF6F00 !default
+$md-amber-A100: #FFE57F !default
+$md-amber-A200: #FFD740 !default
+$md-amber-A400: #FFC400 !default
+$md-amber-A700: #FFAB00 !default
+
+$md-orange-50: #FFF3E0 !default
+$md-orange-100: #FFE0B2 !default
+$md-orange-200: #FFCC80 !default
+$md-orange-300: #FFB74D !default
+$md-orange-400: #FFA726 !default
+$md-orange: #FF9800 !default
+$md-orange-600: #FB8C00 !default
+$md-orange-700: #F57C00 !default
+$md-orange-800: #EF6C00 !default
+$md-orange-900: #E65100 !default
+$md-orange-A100: #FFD180 !default
+$md-orange-A200: #FFAB40 !default
+$md-orange-A400: #FF9100 !default
+$md-orange-A700: #FF6D00 !default
+
+$md-deep-orange-50: #FBE9E7 !default
+$md-deep-orange-100: #FFCCBC !default
+$md-deep-orange-200: #FFAB91 !default
+$md-deep-orange-300: #FF8A65 !default
+$md-deep-orange-400: #FF7043 !default
+$md-deep-orange: #FF5722 !default
+$md-deep-orange-600: #F4511E !default
+$md-deep-orange-700: #E64A19 !default
+$md-deep-orange-800: #D84315 !default
+$md-deep-orange-900: #BF360C !default
+$md-deep-orange-A100: #FF9E80 !default
+$md-deep-orange-A200: #FF6E40 !default
+$md-deep-orange-A400: #FF3D00 !default
+$md-deep-orange-A700: #DD2C00 !default
+
+$md-brown-50: #EFEBE9 !default
+$md-brown-100: #D7CCC8 !default
+$md-brown-200: #BCAAA4 !default
+$md-brown-300: #A1887F !default
+$md-brown-400: #8D6E63 !default
+$md-brown: #795548 !default
+$md-brown-600: #6D4C41 !default
+$md-brown-700: #5D4037 !default
+$md-brown-800: #4E342E !default
+$md-brown-900: #3E2723 !default
+
+$md-grey-50: #FAFAFA !default
+$md-grey-100: #F5F5F5 !default
+$md-grey-200: #EEEEEE !default
+$md-grey-300: #E0E0E0 !default
+$md-grey-400: #BDBDBD !default
+$md-grey: #9E9E9E !default
+$md-grey-600: #757575 !default
+$md-grey-700: #616161 !default
+$md-grey-800: #424242 !default
+$md-grey-900: #212121 !default
+
+$md-blue-grey-50: #ECEFF1 !default
+$md-blue-grey-100: #CFD8DC !default
+$md-blue-grey-200: #B0BEC5 !default
+$md-blue-grey-300: #90A4AE !default
+$md-blue-grey-400: #78909C !default
+$md-blue-grey: #607D8B !default
+$md-blue-grey-600: #546E7A !default
+$md-blue-grey-700: #455A64 !default
+$md-blue-grey-800: #37474F !default
+$md-blue-grey-900: #263238 !default
+
+// screensize
+$sm: 768px
+$md: 992px
+$lg: 1200px
+$xl: 1600px
+
+// grid
+$grid-padding: 10px

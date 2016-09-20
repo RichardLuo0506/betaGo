@@ -1,0 +1,12 @@
+<template>
+    <div class="goban">
+        <div class="goban-grid">
+            <div class="goban-column" repeat.for="column of board">
+            	<div class="moku" repeat.for="moku of column" click.delegate="playMove(moku)">
+            		<div class="stone black" show.bind="moku.stone === 'black'"></div>
+            		<div class="stone white" show.bind="moku.stone === 'white'"></div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</template>

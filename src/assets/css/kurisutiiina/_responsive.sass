@@ -1,0 +1,59 @@
+=media-xs
+	@media screen and (max-width: $sm - 1)
+		@content
+
+=media-sm
+	@media screen and (min-width: $sm) and (max-width: $md - 1)
+		@content
+
+=media-md
+	@media screen and (min-width: $md) and (max-width: $lg - 1)
+		@content
+
+=media-lg
+	@media screen and (min-width: $lg) and (max-width: $xl - 1)
+		@content
+
+=media-xl
+	@media screen and (min-width: $xl)
+		@content
+
+=media-sm-up
+	@media screen and (min-width: $sm)
+		@content
+
+=media-md-up
+	@media screen and (min-width: $md)
+		@content
+
+=media-lg-up
+	@media screen and (min-width: $lg)
+		@content
+
+=media-lg-down
+	@media screen and (max-width: $xl - 1)
+		@content
+
+=media-md-down
+	@media screen and (max-width: $lg - 1)
+		@content
+
+=media-sm-down
+	@media screen and (max-width: $md - 1)
+		@content
+
+=aspect-ratio($width, $height)
+	position: relative
+
+	&:before
+		display: block
+		content: ""
+		width: 100%
+		padding-top: $height / $width * 100%
+
+	> .content
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
