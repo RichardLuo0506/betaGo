@@ -26,8 +26,8 @@
   "cssProcessor": {
     "id": "sass",
     "displayName": "Sass",
-    "fileExtension": ".scss",
-    "source": "src/**/*.scss"
+    "fileExtension": ".sass",
+    "source": "src/**/*.sass"
   },
   "editor": {
     "id": "sublime",
