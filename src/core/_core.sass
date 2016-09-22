@@ -1,0 +1,36 @@
+.core
+	@extend .flex-xy
+
+	position: absolute
+	z-index: 100
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+
+.menu-select
+	@extend .card-3
+
+	display: flex
+	justify-content: space-between
+	width: 400px
+	height: 160px
+	border-radius: 2px
+	padding: 20px
+	background-color: rgba($md-indigo, 0.8)
+
+.menu-option
+	@extend .flex-xy
+
+	+openSans
+
+	font-size: 24px
+	flex: 0 0 170px
+	background-color: $divider
+	border-radius: 2px
+	transition: 200ms $ease-natural
+	font-weight: bold
+
+	&:hover
+		cursor: pointer
+		background-color: $md-indigo

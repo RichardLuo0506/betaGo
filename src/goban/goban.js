@@ -1,14 +1,26 @@
 import $ from 'jquery';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { InitGame } from './../event-hub';
 
 export class Goban {
-	constructor() {
-		this.currentColor = 'black';
-		this.board = this.createBoard(19);
-		this.size = 19;
-		this.lastMovePassed = false;
-		this.suicide = false;
-		this.history = [];
-		this.prisoners = { white: 0, black: 0 };
+	static inject = [EventAggregator];
+
+	constructor(ea) {
+		this.ea = ea;
+		ea.subscribe(InitGame, initOpts => this.init(initOpts));
+	}
+
+	init(initOpts) {
+		if (initOpts.numOfPlayers === 1) {
+			this.currentColor = 'black';
+			this.size = 19;
+			this.lastMovePassed = false;
+			this.suicide = false;
+			this.history = [];
+			this.prisoners = { white: 0, black: 0 };
+			this.board = this.createBoard(19);
+			this.gameCreated = true;
+		}
 	}
 
 	createBoard(size) {

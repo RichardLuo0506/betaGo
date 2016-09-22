@@ -1,5 +1,11 @@
 <template>
+	<require from="core/core"></require>
 	<require from="goban/goban"></require>
+	<require from="goban/control"></require>
     <require from="assets/css/app.css"></require>
-	<goban></goban>
+    <div class="goban-container">
+    	<core></core>
+		<goban></goban>
+		<control></control>
+    </div>
 </template>
